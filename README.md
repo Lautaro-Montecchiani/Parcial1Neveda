@@ -1,51 +1,61 @@
-# Proyecto Final - Aplicación Java con JDBC
+# Proyecto Final - Gestión de Usuarios y Pedidos (Java + JDBC + H2) 🚀
 
-## Descripción
-Este proyecto es una aplicación de consola en Java que gestiona información persistente en una base de datos relacional H2. Permite realizar operaciones CRUD completas sobre las entidades `Usuario` y `Pedido`, las cuales están relacionadas.
+## ¿Qué es este proyecto? 📝
+Imagina que tienes una pequeña empresa y necesitas llevar el control de tus usuarios y los pedidos que realizan. Este proyecto es una aplicación de consola hecha en Java que te permite hacer justamente eso: registrar usuarios, asociarles pedidos, consultar, modificar y eliminar información, todo guardado de forma segura en una base de datos local (H2).
 
-## Requisitos
-- Java 8 o superior
-- Gradle
+## ¿Por qué es útil? 🤔
+- 🧑‍💻 Si nunca programaste, verás cómo una aplicación puede interactuar con una base de datos real.
+- 👨‍🎓 Si ya conocés Java, vas a encontrar buenas prácticas: uso de JDBC, patrón DAO, manejo de recursos, validaciones y logging profesional con Log4j2.
 
-## Estructura del Proyecto
-- `model/`: Clases de dominio (`Usuario`, `Pedido`).
-- `dao/`: Interfaces y clases DAO para acceso a datos.
-- `util/`: Utilidades, como la conexión a la base de datos.
-- `main/`: Clase principal que orquesta el sistema.
-- `resources/schema.sql`: Script de creación de la base de datos.
+## ¿Cómo está organizado? 🗂️
+El proyecto está dividido en capas, como una cebolla (¡pero sin hacer llorar!):
+- 📦 **model/**: Las "plantillas" de Usuario y Pedido.
+- 🗄️ **dao/**: El puente entre Java y la base de datos. Aquí están las interfaces y clases que hacen el trabajo sucio de guardar y buscar datos.
+- 🛠️ **util/**: Herramientas de apoyo, como la conexión a la base de datos.
+- 💻 **main/**: El corazón de la aplicación, donde el usuario interactúa con el sistema.
+- 🗒️ **resources/schema.sql**: El plano de la base de datos, para que todo funcione desde cero.
 
-## Instalación y Ejecución
-1. Clona el repositorio o descarga el código fuente.
-2. Abre una terminal en la raíz del proyecto.
-3. Ejecuta:
-   ```
-   gradlew build
-   gradlew run
-   ```
-   o en Linux/Mac:
-   ```
-   ./gradlew build
-   ./gradlew run
-   ```
+## ¿Cómo se ejecuta? ▶️
+Puedes ejecutar la aplicación directamente desde la clase `Main` ubicada en `src/main/java/main/Main.java` usando tu IDE favorito (por ejemplo, IntelliJ IDEA o Eclipse) o desde la terminal con Gradle.
 
-## Base de Datos
-- Se utiliza H2 en modo archivo. El archivo de la base se crea automáticamente.
-- El script `resources/schema.sql` define la estructura inicial.
+## ¿Qué podés hacer con la app? ⚙️
+- 👤 Crear, listar, buscar, actualizar y eliminar usuarios.
+- 📦 Crear, listar, buscar, actualizar y eliminar pedidos (cada pedido pertenece a un usuario).
+- ✅ Validaciones para evitar datos erróneos (por ejemplo, emails mal escritos o apellidos con números).
+- ⏹️ Cancelar cualquier operación en cualquier momento escribiendo "0".
+- 📝 Todo queda registrado en logs para facilitar el seguimiento y la depuración.
 
-## Funcionalidades
-- CRUD completo para usuarios y pedidos.
-- Separación en capas (modelo, DAO, utilidades, main).
-- Manejo de excepciones y recursos con try-with-resources.
-- Logging de operaciones principales.
+## ¿Cómo lo probás? 🧪
+1. **Requisitos:** Tener Java 8+ y Gradle instalados.
+2. **Instalación:**
+   - 📥 Cloná o descargá el proyecto.
+   - 💻 Abrí una terminal en la carpeta raíz.
+   - Ejecutá:
+     ```
+     gradlew build
+     gradlew run
+     ```
+     (En Linux/Mac: ./gradlew build ./gradlew run)
+3. **¡Listo!** Vas a ver un menú en consola para interactuar con el sistema.
 
-## Notas
-- El sistema está preparado para ser extendido con nuevas entidades y relaciones.
-- Para restablecer la base de datos, elimina los archivos `database.mv.db` y `database.trace.db`.
+## ¿Qué hay "bajo el capó"? 🔧
+- 🗃️ **JDBC**: Para hablar con la base de datos H2.
+- 🏗️ **Patrón DAO**: Para separar la lógica de acceso a datos del resto del código.
+- 🪵 **Log4j2**: Para registrar todo lo importante que pasa en la app.
+- 🛡️ **Validaciones**: Para que los datos sean siempre correctos.
+- ⚙️ **Gradle**: Para compilar y ejecutar fácilmente.
 
-## Autor
-- [Tu Nombre]
+## ¿Quién puede usarlo? 👥
+- Personas que recién empiezan y quieren ver un ejemplo real de Java + base de datos.
+- Estudiantes de programación.
+- Docentes que buscan un caso práctico para mostrar en clase.
+- Cualquier persona que quiera entender cómo se estructura una app Java profesional, pero simple.
+
+## ¿Querés modificarlo o expandirlo? 🧩
+El código es claro y está comentado. Podés agregar nuevas entidades, relaciones, o mejorar la interfaz de usuario. ¡Animate a experimentar!
 
 ---
 
-Este proyecto cumple con los requisitos del enunciado y la rúbrica para la materia de Programación/Paradigmas/BD.
+**Autor:** Lautaro Montecchiani, legajo 52802
 
+¿Dudas o sugerencias? ¡Abrí un issue o contactame!
