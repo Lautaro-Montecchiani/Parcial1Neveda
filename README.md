@@ -29,7 +29,8 @@ Puedes ejecutar la aplicación directamente desde la clase `Main` ubicada en `sr
 1. **Requisitos:** Tener Java 8+ y Gradle instalados.
 2. **Instalación:**
    - 📥 Cloná o descargá el proyecto.
-   - 💻 Abrí una terminal en la carpeta raíz.
+   - 💻 Se puede runerar desde el archivo Main.java
+   -  O también se abrir una terminal en la carpeta raíz.
    - Ejecutá:
      ```
      gradlew build
